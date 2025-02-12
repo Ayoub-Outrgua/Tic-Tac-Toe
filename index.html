@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <div>
+            <h1 id="Title">Tic Tac Toe</h1>
+        </div>
+        <div class="players">
+            <form action="">
+                <label>Player One: </label>
+                <!-- <input type="text" id="player-one" placeholder="X"> -->
+                <span class="input">X</span>
+                <br>
+                <label>Player Two: </label>
+                <!-- <input type="text" id="player-two" placeholder="O"> -->
+                <span class="input">O</span>
+            </form>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <td id="button-1" class="btn" onclick="buttonCklick('button-1')"></td>
+                    <td id="button-2" class="btn" onclick="buttonCklick('button-2')"></td>
+                    <td id="button-3" class="btn" onclick="buttonCklick('button-3')"></td>
+                </tr>
+                <tr>
+                    <td id="button-4" class="btn" onclick="buttonCklick('button-4')"></td>
+                    <td id="button-5" class="btn" onclick="buttonCklick('button-5')"></td>
+                    <td id="button-6" class="btn" onclick="buttonCklick('button-6')"></td>
+                </tr>
+                <tr>
+                    <td id="button-7" class="btn" onclick="buttonCklick('button-7')"></td>
+                    <td id="button-8" class="btn" onclick="buttonCklick('button-8')"></td>
+                    <td id="button-9" class="btn" onclick="buttonCklick('button-9')"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <h2 id="player-win"></h2>
+        </div>
+        <br>
+        <div>
+            <h5>by Ayoub OUTRGUA</h5>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
