@@ -41,7 +41,6 @@ function buttonCklick(id) {
     {
         table[i] = document.getElementById( 'button-'+ i ).innerHTML;
     }
-    // console.log(table);
 
     const bntTable = [
         [1, 2, 3],
@@ -60,7 +59,6 @@ function buttonCklick(id) {
     for (let i = 0; i <= 7; i++) 
     {
         let tbl = bntTable[i];
-        // console.log(tbl);
         let a = tbl[0];
         let b = tbl[1];
         let c = tbl[2];
@@ -73,14 +71,31 @@ function buttonCklick(id) {
         {
             ChangeColor(Player_One,"button-"+a,"button-"+b,"button-"+c);
             disableEmptybtn();
+            disableRefreshbtn();
             return;
         }
         else if (table[a] == Player_Two && table[b] == Player_Two && table[c] == Player_Two) 
         {
             ChangeColor(Player_Two,"button-"+a,"button-"+b,"button-"+c);
             disableEmptybtn();
+            disableRefreshbtn();
             return;
         }
+    }
+
+    //this for check drow status
+    let checkFull = 0;
+    for (let i = 1; i <= 9; i++) {
+        if (table[i] != "") {
+            checkFull ++;
+        }
+        console.log("sssssss:  "+checkFull);
+    }
+    if (checkFull == 9) {
+        document.querySelector("#player-win").innerHTML = "The result is a draw.";
+        disableEmptybtn();
+        disableRefreshbtn();
+        return;
     }
 }
 
@@ -103,4 +118,55 @@ function disableEmptybtn()
         let button = document.getElementById("button-" + i);
         button.style.pointerEvents = "none";
     }
+}
+
+/*
+this function is to check the display status of the refresh button
+if it none we make it block
+if it block we make it none
+*/
+function disableRefreshbtn()
+{
+    const refreshbtn = document.querySelector('.refresh-btn');
+    refreshbtn.style.display = 'none';
+    if (refreshbtn.style.display === 'none') {
+        refreshbtn.style.display = 'block';
+    } else {
+        refreshbtn.style.display = 'none';
+    }
+}
+
+/*
+this function is to check the display status of the refresh button
+if it none we make it block
+if it block we make it none
+*/
+function RefreshbtnClick()
+{
+    table = [];
+    for (let i = 1; i <= 9; i++) {
+        let button = document.getElementById( 'button-'+ i );
+        button.innerHTML = "";
+        button.style.backgroundColor = "#fff";
+        button.style.color = "rgb(255, 211, 66)";
+        button.style.pointerEvents = "auto";
+
+        // this for add mouseover event listener for hover effect
+        button.addEventListener('mouseover', function() {
+            button.style.backgroundColor = "rgb(255, 211, 66)";
+            button.style.color = '#fff';  
+            button.style.border = '1px solid #fff'
+        });
+
+        // this for add mouseout event listener to revert back the styles
+        button.addEventListener('mouseout', function() {
+            button.style.backgroundColor = '#fff';
+            button.style.color = "rgb(255, 211, 66)";
+            button.style.border = '1px solid rgb(255, 211, 66)'
+        });
+
+    }
+    document.querySelector("#player-win").innerHTML = "";
+    const refreshbtn = document.querySelector('.refresh-btn');
+    refreshbtn.style.display = 'none';
 }
