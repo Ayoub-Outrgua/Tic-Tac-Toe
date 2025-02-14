@@ -14,7 +14,3 @@ This is a simple **Tic Tac Toe** game built with HTML, CSS, and JavaScript. The 
 2. Click on any empty cell to place your mark (X or O).
 3. The game will automatically check for a winner after each move.
 4. If there's a winner, the game will display a the winning player.
-5. It also displays the draw status and the possibility of replaying the game.
-
-**You can play it directly from here.**
-https://ayoub-outrgua.github.io/Tic-Tac-Toe/
