@@ -137,9 +137,7 @@ function disableRefreshbtn()
 }
 
 /*
-this function is to check the display status of the refresh button
-if it none we make it block
-if it block we make it none
+this function when you click the refresh button
 */
 function RefreshbtnClick()
 {
