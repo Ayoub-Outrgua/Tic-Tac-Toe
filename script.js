@@ -83,7 +83,7 @@ function buttonCklick(id) {
         }
     }
 
-    //this for check drow status
+    //this is to check the tie status
     let checkFull = 0;
     for (let i = 1; i <= 9; i++) {
         if (table[i] != "") {
@@ -164,6 +164,7 @@ function RefreshbtnClick()
         });
 
     }
+    //here we make the h2 that displays the result empty and hide the refresh button
     document.querySelector("#player-win").innerHTML = "";
     const refreshbtn = document.querySelector('.refresh-btn');
     refreshbtn.style.display = 'none';
